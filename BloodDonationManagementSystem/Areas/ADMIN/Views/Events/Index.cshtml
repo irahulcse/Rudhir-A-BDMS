@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BloodDonationManagementSystem.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Upcoming Camps</h3>
+<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p><br />
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>
+            EventName
+        </th>
+        <th>
+          Place
+        </th>
+        <th>
+            SnapShot
+        </th>
+        <th>
+          Date of Event
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                <image src="@Url.Content(item.Image)" width="100px" height="100px"></image>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+               
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+
+    }
+    @*@Html.HiddenFor(Model=>Model.Id)*@
+
+</table>

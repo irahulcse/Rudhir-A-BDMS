@@ -1,0 +1,137 @@
+﻿@model BloodDonationManagementSystem.Message
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
+}
+
+<div id="main">
+    <section class="wrapper style1">
+        <div class="inner">
+
+            <div class="flex flex-2">
+                <div class="" style="width:100%; max-width:500px; margin-left:300px; margin-right:200px; ">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+
+
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PersonName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.PersonName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PersonName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Mobile_No, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Mobile_No, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Mobile_No, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.bid, "Blood Group", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("bid", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.bid, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.message1, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.message1, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.message1, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fk_stateid, "State", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("fk_stateid", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.fk_stateid, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fk_orgid, "Contacted Organization", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("fk_orgid", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.fk_orgid, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-default" id="btn" />
+                            </div>
+                        </div>
+
+                    }
+
+                    <h5>
+                        <a href="~/Home/UserNeedBlood" class="button alt small">BACK</a>
+
+                    </h5>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<section class="wrapper style2">
+    <div class="inner">
+        <div class="flex flex-2">
+            <div class="col col2">
+                <h3>Benifits of Our System</h3>
+                <p>You can work here as an Organization that can keep all records here and create as many as donors you can .You can also work as Individual Donor by registering here and Our system will show all nearby Blood Banks you.</p>
+                <p>One can easily get blood from this system if blood is available,He/She just need to see the stock available of current blood group and then blood stocks in different Hospitals will be shown to him.You can easily contact them just by clicking a button. </p>
+                <a href="#" class="button">Learn More</a>
+            </div>
+            <div class="col col1 first">
+                <div class="image round fit">
+
+                    <img src="~/images/pic02.jpg" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    $("#btn").click(function () {
+        
+        swal({
+            title: "Good job!",
+            text: "We have Successfully sent your Information to contacted Organization!",
+            icon: "success",
+            button: "Ok!",
+        });
+        
+            });
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

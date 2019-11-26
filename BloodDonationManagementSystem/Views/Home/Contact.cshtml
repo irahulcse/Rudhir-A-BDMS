@@ -1,17 +1,68 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@{
+    var listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem { Text = "CHOOSE", Value = "0" });
+    listItems.Add(new SelectListItem { Text = "INDIVIDUAL DONOR", Value = "1" });
+    listItems.Add(new SelectListItem { Text = "ORGANIZATION", Value = "2" });
+}
+
+<!-- Main -->
+<div id="main">
+
+    <!-- Section -->
+    <section class="wrapper style1">
+        <div class="inner">
+          
+            <div class="flex flex-2">
+                <div class="" style="width:100%;">
+
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="12u$">
+                        @Html.Label("Your Role:", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("dpn", listItems, null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="12u$">
+                        <input type="submit" value="Confirm" id="ct" />
+                            
+                        
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section -->
+    <section class="wrapper style2">
+        <div class="inner">
+            <div class="flex flex-2">
+                <div class="col col2">
+                    <h3>Benifits of Our System</h3>
+                    <p>You can work here as an Organization that can keep all records here and create as many as donors you can .You can also work as Individual Donor by registering here and Our system will show all nearby Blood Banks you.</p>
+                    <p>One can easily get blood from this system if blood is available,He/She just need to see the stock available of current blood group and then blood stocks in different Hospitals will be shown to him.You can easily contact them just by clicking a button. </p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+                <div class="col col1 first">
+                    <div class="image round fit">
+
+                        <img src="~/images/pic02.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Content/JS/index.js"></script>

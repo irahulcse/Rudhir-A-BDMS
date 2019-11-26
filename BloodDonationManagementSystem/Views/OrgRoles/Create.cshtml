@@ -1,0 +1,86 @@
+﻿@model BloodDonationManagementSystem.Org_roles
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<section class="wrapper style1">
+    <div class="inner">
+
+        <div class="flex flex-2">
+            <div class="col col1">
+                <div class="image round fit">
+                    <img src="~/images/pic01.jpg" alt="" />
+                </div>
+            </div>
+            <div class="col col2">
+                <h3>Benifits of Our System</h3>
+                <p>You can work here as an Organization that can keep all records here and create as many as donors you can .You can also work as Individual Donor by registering here and Our system will show all nearby Blood Banks you.</p>
+                <p>One can easily get blood from this system if blood is available,He/She just need to see the stock available of current blood group and then blood stocks in different Hospitals will be shown to him.You can easily contact them just by clicking a button. </p>
+                <a href="#main" class="button">Add Organization Roles</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="main">
+    <section class="wrapper style1">
+        <div class="inner">
+           
+            <div class="flex flex-2">
+                <div class="" style="width:100%; max-width:500px; margin-left:400px; margin-right:200px; ">
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.tid, "Role Type", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("tid", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.tid, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PersonName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.PersonName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PersonName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.fk_orgid, "Organization Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("fk_orgid", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.fk_orgid, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <br />
+                    <div>
+                        <a href="~/OrgRoles/Index" class="button alt small">BACK</a>
+               
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

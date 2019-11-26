@@ -1,0 +1,1156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blood_Gp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BloodBank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="fk_stateid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Donor">
+          <Key>
+            <PropertyRef Name="pk_id" />
+          </Key>
+          <Property Name="pk_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fk_donor_orgid" Type="int" Nullable="false" />
+          <Property Name="DonorName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DonorEmail" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="bid" Type="int" Nullable="false" />
+          <Property Name="gid" Type="int" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="fk_stateid" Type="int" Nullable="false" />
+          <Property Name="Aadhar Card No" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="cid" Type="int" Nullable="false" />
+          <Property Name="CreatedTime" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Place" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gender" Type="char" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Individual_Donor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DonorName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bid" Type="int" Nullable="false" />
+          <Property Name="gid" Type="int" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="fkstateid" Type="int" Nullable="false" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AadharCardNo" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedTime" Type="date" Nullable="false" />
+          <Property Name="fk_id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="fk_roleid" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Mobile No" Type="bigint" Nullable="false" />
+          <Property Name="bid" Type="int" Nullable="false" />
+          <Property Name="message" Type="varchar(max)" Nullable="false" />
+          <Property Name="fk_stateid" Type="int" Nullable="false" />
+          <Property Name="fk_orgid" Type="int" Nullable="false" />
+          <Property Name="created_time" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Org_details">
+          <Key>
+            <PropertyRef Name="pk_orgid" />
+          </Key>
+          <Property Name="pk_orgid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="org_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="org_descp" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="fk_id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="fk_stateid" Type="int" Nullable="false" />
+          <Property Name="org_image" Type="nchar" MaxLength="150" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="created_date" Type="datetime" Nullable="false" />
+          <Property Name="fk_roleid" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Org_roles">
+          <Key>
+            <PropertyRef Name="pk_roleId" />
+          </Key>
+          <Property Name="pk_roleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tid" Type="int" Nullable="false" />
+          <Property Name="PersonName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="fk_orgid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoleType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="States">
+          <Key>
+            <PropertyRef Name="stateid" />
+          </Key>
+          <Property Name="stateid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BloodBank_States">
+          <End Role="States" Type="Self.States" Multiplicity="1" />
+          <End Role="BloodBank" Type="Self.BloodBank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="BloodBank">
+              <PropertyRef Name="fk_stateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_Blood_Gp">
+          <End Role="Blood_Gp" Type="Self.Blood_Gp" Multiplicity="1" />
+          <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Gp">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="bid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="gid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_Org_roles">
+          <End Role="Org_roles" Type="Self.Org_roles" Multiplicity="1" />
+          <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org_roles">
+              <PropertyRef Name="pk_roleId" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="cid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_Orgdetails">
+          <End Role="Org_details" Type="Self.Org_details" Multiplicity="1" />
+          <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org_details">
+              <PropertyRef Name="pk_orgid" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="fk_donor_orgid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_States">
+          <End Role="States" Type="Self.States" Multiplicity="1" />
+          <End Role="Donor" Type="Self.Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="fk_stateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individual_Donor_AspNetRole">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
+          <End Role="Individual_Donor" Type="Self.Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="fk_roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individual_Donor_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Individual_Donor" Type="Self.Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="fk_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individual_Donor_Blood_Gp">
+          <End Role="Blood_Gp" Type="Self.Blood_Gp" Multiplicity="1" />
+          <End Role="Individual_Donor" Type="Self.Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Gp">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="bid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individual_Donor_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Individual_Donor" Type="Self.Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="gid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individual_Donor_States">
+          <End Role="States" Type="Self.States" Multiplicity="1" />
+          <End Role="Individual_Donor" Type="Self.Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="fkstateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Blood_Gp">
+          <End Role="Blood_Gp" Type="Self.Blood_Gp" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Gp">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="bid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Org_details">
+          <End Role="Org_details" Type="Self.Org_details" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org_details">
+              <PropertyRef Name="pk_orgid" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="fk_orgid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_State">
+          <End Role="States" Type="Self.States" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="fk_stateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Org_details_AspNetRole">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
+          <End Role="Org_details" Type="Self.Org_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Org_details">
+              <PropertyRef Name="fk_roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Org_details_States">
+          <End Role="States" Type="Self.States" Multiplicity="1" />
+          <End Role="Org_details" Type="Self.Org_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="Org_details">
+              <PropertyRef Name="fk_stateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Org_roles_Org_details">
+          <End Role="Org_details" Type="Self.Org_details" Multiplicity="1" />
+          <End Role="Org_roles" Type="Self.Org_roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org_details">
+              <PropertyRef Name="pk_orgid" />
+            </Principal>
+            <Dependent Role="Org_roles">
+              <PropertyRef Name="fk_orgid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Org_roles_RoleType">
+          <End Role="RoleType" Type="Self.RoleType" Multiplicity="1" />
+          <End Role="Org_roles" Type="Self.Org_roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Org_roles">
+              <PropertyRef Name="tid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="Org_details" Type="Self.Org_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Org_details">
+              <PropertyRef Name="fk_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blood_Gp" EntityType="Self.Blood_Gp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BloodBank" EntityType="Self.BloodBank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donor" EntityType="Self.Donor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Individual_Donor" EntityType="Self.Individual_Donor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Org_details" EntityType="Self.Org_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Org_roles" EntityType="Self.Org_roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoleType" EntityType="Self.RoleType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BloodBank_States" Association="Self.FK_BloodBank_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="BloodBank" EntitySet="BloodBank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_Blood_Gp" Association="Self.FK_Donor_Blood_Gp">
+            <End Role="Blood_Gp" EntitySet="Blood_Gp" />
+            <End Role="Donor" EntitySet="Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_Gender" Association="Self.FK_Donor_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Donor" EntitySet="Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_Org_roles" Association="Self.FK_Donor_Org_roles">
+            <End Role="Org_roles" EntitySet="Org_roles" />
+            <End Role="Donor" EntitySet="Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_Orgdetails" Association="Self.FK_Donor_Orgdetails">
+            <End Role="Org_details" EntitySet="Org_details" />
+            <End Role="Donor" EntitySet="Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_States" Association="Self.FK_Donor_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Donor" EntitySet="Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individual_Donor_AspNetRole" Association="Self.FK_Individual_Donor_AspNetRole">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individual_Donor_AspNetUsers" Association="Self.FK_Individual_Donor_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individual_Donor_Blood_Gp" Association="Self.FK_Individual_Donor_Blood_Gp">
+            <End Role="Blood_Gp" EntitySet="Blood_Gp" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individual_Donor_Gender" Association="Self.FK_Individual_Donor_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individual_Donor_States" Association="Self.FK_Individual_Donor_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Blood_Gp" Association="Self.FK_Message_Blood_Gp">
+            <End Role="Blood_Gp" EntitySet="Blood_Gp" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Org_details" Association="Self.FK_Message_Org_details">
+            <End Role="Org_details" EntitySet="Org_details" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_State" Association="Self.FK_Message_State">
+            <End Role="States" EntitySet="States" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Org_details_AspNetRole" Association="Self.FK_Org_details_AspNetRole">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="Org_details" EntitySet="Org_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Org_details_States" Association="Self.FK_Org_details_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Org_details" EntitySet="Org_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Org_roles_Org_details" Association="Self.FK_Org_roles_Org_details">
+            <End Role="Org_details" EntitySet="Org_details" />
+            <End Role="Org_roles" EntitySet="Org_roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Org_roles_RoleType" Association="Self.FK_Org_roles_RoleType">
+            <End Role="RoleType" EntitySet="RoleType" />
+            <End Role="Org_roles" EntitySet="Org_roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_AspNetUsers" Association="Self.FK_Table_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Org_details" EntitySet="Org_details" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Blood_Gp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Messages" Relationship="Model.FK_Message_Blood_Gp" FromRole="Blood_Gp" ToRole="Message" />
+          <NavigationProperty Name="Donors" Relationship="Model.FK_Donor_Blood_Gp" FromRole="Blood_Gp" ToRole="Donor" />
+          <NavigationProperty Name="Individual_Donor" Relationship="Model.FK_Individual_Donor_Blood_Gp" FromRole="Blood_Gp" ToRole="Individual_Donor" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gender1" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Donors" Relationship="Model.FK_Donor_Gender" FromRole="Gender" ToRole="Donor" />
+          <NavigationProperty Name="Individual_Donor" Relationship="Model.FK_Individual_Donor_Gender" FromRole="Gender" ToRole="Individual_Donor" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Blood_Gp" EntityType="Self.Blood_Gp" />
+          <EntitySet Name="Genders" EntityType="Self.Gender" />
+          <EntitySet Name="Events" EntityType="Model.Event" />
+          <EntitySet Name="Org_roles" EntityType="Model.Org_roles" />
+          <EntitySet Name="RoleTypes" EntityType="Model.RoleType" />
+          <AssociationSet Name="FK_Org_roles_RoleType" Association="Model.FK_Org_roles_RoleType">
+            <End Role="RoleType" EntitySet="RoleTypes" />
+            <End Role="Org_roles" EntitySet="Org_roles" />
+          </AssociationSet>
+          <EntitySet Name="States" EntityType="Model.State" />
+          <EntitySet Name="BloodBanks" EntityType="Model.BloodBank" />
+          <AssociationSet Name="FK_BloodBank_States" Association="Model.FK_BloodBank_States">
+            <End Role="State" EntitySet="States" />
+            <End Role="BloodBank" EntitySet="BloodBanks" />
+          </AssociationSet>
+          <EntitySet Name="Messages" EntityType="Model.Message" />
+          <AssociationSet Name="FK_Message_Blood_Gp" Association="Model.FK_Message_Blood_Gp">
+            <End Role="Blood_Gp" EntitySet="Blood_Gp" />
+            <End Role="Message" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_State" Association="Model.FK_Message_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="Message" EntitySet="Messages" />
+          </AssociationSet>
+          <EntitySet Name="Donors" EntityType="Model.Donor" />
+          <AssociationSet Name="FK_Donor_Blood_Gp" Association="Model.FK_Donor_Blood_Gp">
+            <End Role="Blood_Gp" EntitySet="Blood_Gp" />
+            <End Role="Donor" EntitySet="Donors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_Gender" Association="Model.FK_Donor_Gender">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Donor" EntitySet="Donors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_Org_roles" Association="Model.FK_Donor_Org_roles">
+            <End Role="Org_roles" EntitySet="Org_roles" />
+            <End Role="Donor" EntitySet="Donors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_States" Association="Model.FK_Donor_States">
+            <End Role="State" EntitySet="States" />
+            <End Role="Donor" EntitySet="Donors" />
+          </AssociationSet>
+          <EntitySet Name="AspNetRoles" EntityType="Model.AspNetRole" />
+          <EntitySet Name="AspNetUsers" EntityType="Model.AspNetUser" />
+          <EntitySet Name="Individual_Donor" EntityType="Model.Individual_Donor" />
+          <EntitySet Name="Org_details" EntityType="Model.Org_details" />
+          <AssociationSet Name="FK_Individual_Donor_AspNetRole" Association="Model.FK_Individual_Donor_AspNetRole">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Org_details_AspNetRole" Association="Model.FK_Org_details_AspNetRole">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="Org_details" EntitySet="Org_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individual_Donor_AspNetUsers" Association="Model.FK_Individual_Donor_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_AspNetUsers" Association="Model.FK_Table_AspNetUsers">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="Org_details" EntitySet="Org_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individual_Donor_Blood_Gp" Association="Model.FK_Individual_Donor_Blood_Gp">
+            <End Role="Blood_Gp" EntitySet="Blood_Gp" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donor_Orgdetails" Association="Model.FK_Donor_Orgdetails">
+            <End Role="Org_details" EntitySet="Org_details" />
+            <End Role="Donor" EntitySet="Donors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individual_Donor_Gender" Association="Model.FK_Individual_Donor_Gender">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Individual_Donor_States" Association="Model.FK_Individual_Donor_States">
+            <End Role="State" EntitySet="States" />
+            <End Role="Individual_Donor" EntitySet="Individual_Donor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Org_details" Association="Model.FK_Message_Org_details">
+            <End Role="Org_details" EntitySet="Org_details" />
+            <End Role="Message" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Org_details_States" Association="Model.FK_Org_details_States">
+            <End Role="State" EntitySet="States" />
+            <End Role="Org_details" EntitySet="Org_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Org_roles_Org_details" Association="Model.FK_Org_roles_Org_details">
+            <End Role="Org_details" EntitySet="Org_details" />
+            <End Role="Org_roles" EntitySet="Org_roles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="EventName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Place" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Org_roles">
+          <Key>
+            <PropertyRef Name="pk_roleId" />
+          </Key>
+          <Property Name="pk_roleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tid" Type="Int32" Nullable="false" />
+          <Property Name="PersonName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="fk_orgid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RoleType" Relationship="Model.FK_Org_roles_RoleType" FromRole="Org_roles" ToRole="RoleType" />
+          <NavigationProperty Name="Donors" Relationship="Model.FK_Donor_Org_roles" FromRole="Org_roles" ToRole="Donor" />
+          <NavigationProperty Name="Org_details" Relationship="Model.FK_Org_roles_Org_details" FromRole="Org_roles" ToRole="Org_details" />
+        </EntityType>
+        <EntityType Name="RoleType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Org_roles" Relationship="Model.FK_Org_roles_RoleType" FromRole="RoleType" ToRole="Org_roles" />
+        </EntityType>
+        <Association Name="FK_Org_roles_RoleType">
+          <End Type="Model.RoleType" Role="RoleType" Multiplicity="1" />
+          <End Type="Model.Org_roles" Role="Org_roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Org_roles">
+              <PropertyRef Name="tid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="stateid" />
+          </Key>
+          <Property Name="stateid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="BloodBanks" Relationship="Model.FK_BloodBank_States" FromRole="State" ToRole="BloodBank" />
+          <NavigationProperty Name="Messages" Relationship="Model.FK_Message_State" FromRole="State" ToRole="Message" />
+          <NavigationProperty Name="Donors" Relationship="Model.FK_Donor_States" FromRole="State" ToRole="Donor" />
+          <NavigationProperty Name="Individual_Donor" Relationship="Model.FK_Individual_Donor_States" FromRole="State" ToRole="Individual_Donor" />
+          <NavigationProperty Name="Org_details" Relationship="Model.FK_Org_details_States" FromRole="State" ToRole="Org_details" />
+        </EntityType>
+        <EntityType Name="BloodBank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fk_stateid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="State" Relationship="Model.FK_BloodBank_States" FromRole="BloodBank" ToRole="State" />
+        </EntityType>
+        <Association Name="FK_BloodBank_States">
+          <End Type="Model.State" Role="State" Multiplicity="1" />
+          <End Type="Model.BloodBank" Role="BloodBank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="BloodBank">
+              <PropertyRef Name="fk_stateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile_No" Type="Int64" Nullable="false" />
+          <Property Name="bid" Type="Int32" Nullable="false" />
+          <Property Name="message1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fk_stateid" Type="Int32" Nullable="false" />
+          <Property Name="fk_orgid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Blood_Gp" Relationship="Model.FK_Message_Blood_Gp" FromRole="Message" ToRole="Blood_Gp" />
+          <NavigationProperty Name="State" Relationship="Model.FK_Message_State" FromRole="Message" ToRole="State" />
+          <Property Name="created_time" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Org_details" Relationship="Model.FK_Message_Org_details" FromRole="Message" ToRole="Org_details" />
+        </EntityType>
+        <Association Name="FK_Message_Blood_Gp">
+          <End Type="Model.Blood_Gp" Role="Blood_Gp" Multiplicity="1" />
+          <End Type="Model.Message" Role="Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Gp">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="bid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_State">
+          <End Type="Model.State" Role="State" Multiplicity="1" />
+          <End Type="Model.Message" Role="Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="fk_stateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Donor">
+          <Key>
+            <PropertyRef Name="pk_id" />
+          </Key>
+          <Property Name="pk_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fk_donor_orgid" Type="Int32" Nullable="false" />
+          <Property Name="DonorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DonorEmail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="bid" Type="Int32" Nullable="false" />
+          <Property Name="gid" Type="Int32" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ContactNo" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="fk_stateid" Type="Int32" Nullable="false" />
+          <Property Name="Aadhar_Card_No" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="cid" Type="Int32" Nullable="false" />
+          <Property Name="CreatedTime" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Blood_Gp" Relationship="Model.FK_Donor_Blood_Gp" FromRole="Donor" ToRole="Blood_Gp" />
+          <NavigationProperty Name="Gender" Relationship="Model.FK_Donor_Gender" FromRole="Donor" ToRole="Gender" />
+          <NavigationProperty Name="Org_roles" Relationship="Model.FK_Donor_Org_roles" FromRole="Donor" ToRole="Org_roles" />
+          <NavigationProperty Name="State" Relationship="Model.FK_Donor_States" FromRole="Donor" ToRole="State" />
+          <NavigationProperty Name="Org_details" Relationship="Model.FK_Donor_Orgdetails" FromRole="Donor" ToRole="Org_details" />
+        </EntityType>
+        <Association Name="FK_Donor_Blood_Gp">
+          <End Type="Model.Blood_Gp" Role="Blood_Gp" Multiplicity="1" />
+          <End Type="Model.Donor" Role="Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Gp">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="bid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_Gender">
+          <End Type="Model.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="Model.Donor" Role="Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="gid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_Org_roles">
+          <End Type="Model.Org_roles" Role="Org_roles" Multiplicity="1" />
+          <End Type="Model.Donor" Role="Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org_roles">
+              <PropertyRef Name="pk_roleId" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="cid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_States">
+          <End Type="Model.State" Role="State" Multiplicity="1" />
+          <End Type="Model.Donor" Role="Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="fk_stateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Individual_Donor" Relationship="Model.FK_Individual_Donor_AspNetRole" FromRole="AspNetRole" ToRole="Individual_Donor" />
+          <NavigationProperty Name="Org_details" Relationship="Model.FK_Org_details_AspNetRole" FromRole="AspNetRole" ToRole="Org_details" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Individual_Donor" Relationship="Model.FK_Individual_Donor_AspNetUsers" FromRole="AspNetUser" ToRole="Individual_Donor" />
+          <NavigationProperty Name="Org_details" Relationship="Model.FK_Table_AspNetUsers" FromRole="AspNetUser" ToRole="Org_details" />
+        </EntityType>
+        <EntityType Name="Individual_Donor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DonorName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bid" Type="Int32" Nullable="false" />
+          <Property Name="gid" Type="Int32" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fkstateid" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AadharCardNo" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fk_id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="fk_roleid" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRole" Relationship="Model.FK_Individual_Donor_AspNetRole" FromRole="Individual_Donor" ToRole="AspNetRole" />
+          <NavigationProperty Name="AspNetUser" Relationship="Model.FK_Individual_Donor_AspNetUsers" FromRole="Individual_Donor" ToRole="AspNetUser" />
+          <NavigationProperty Name="Blood_Gp" Relationship="Model.FK_Individual_Donor_Blood_Gp" FromRole="Individual_Donor" ToRole="Blood_Gp" />
+          <NavigationProperty Name="Gender" Relationship="Model.FK_Individual_Donor_Gender" FromRole="Individual_Donor" ToRole="Gender" />
+          <NavigationProperty Name="State" Relationship="Model.FK_Individual_Donor_States" FromRole="Individual_Donor" ToRole="State" />
+        </EntityType>
+        <EntityType Name="Org_details">
+          <Key>
+            <PropertyRef Name="pk_orgid" />
+          </Key>
+          <Property Name="pk_orgid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="org_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="org_descp" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="fk_id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="fk_stateid" Type="Int32" Nullable="false" />
+          <Property Name="org_image" Type="String" Nullable="false" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fk_roleid" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRole" Relationship="Model.FK_Org_details_AspNetRole" FromRole="Org_details" ToRole="AspNetRole" />
+          <NavigationProperty Name="AspNetUser" Relationship="Model.FK_Table_AspNetUsers" FromRole="Org_details" ToRole="AspNetUser" />
+          <NavigationProperty Name="Donors" Relationship="Model.FK_Donor_Orgdetails" FromRole="Org_details" ToRole="Donor" />
+          <NavigationProperty Name="Messages" Relationship="Model.FK_Message_Org_details" FromRole="Org_details" ToRole="Message" />
+          <NavigationProperty Name="State" Relationship="Model.FK_Org_details_States" FromRole="Org_details" ToRole="State" />
+          <NavigationProperty Name="Org_roles" Relationship="Model.FK_Org_roles_Org_details" FromRole="Org_details" ToRole="Org_roles" />
+        </EntityType>
+        <Association Name="FK_Individual_Donor_AspNetRole">
+          <End Type="Model.AspNetRole" Role="AspNetRole" Multiplicity="1" />
+          <End Type="Model.Individual_Donor" Role="Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="fk_roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Org_details_AspNetRole">
+          <End Type="Model.AspNetRole" Role="AspNetRole" Multiplicity="1" />
+          <End Type="Model.Org_details" Role="Org_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRole">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Org_details">
+              <PropertyRef Name="fk_roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individual_Donor_AspNetUsers">
+          <End Type="Model.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="Model.Individual_Donor" Role="Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="fk_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_AspNetUsers">
+          <End Type="Model.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+          <End Type="Model.Org_details" Role="Org_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Org_details">
+              <PropertyRef Name="fk_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individual_Donor_Blood_Gp">
+          <End Type="Model.Blood_Gp" Role="Blood_Gp" Multiplicity="1" />
+          <End Type="Model.Individual_Donor" Role="Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blood_Gp">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="bid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donor_Orgdetails">
+          <End Type="Model.Org_details" Role="Org_details" Multiplicity="1" />
+          <End Type="Model.Donor" Role="Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org_details">
+              <PropertyRef Name="pk_orgid" />
+            </Principal>
+            <Dependent Role="Donor">
+              <PropertyRef Name="fk_donor_orgid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individual_Donor_Gender">
+          <End Type="Model.Gender" Role="Gender" Multiplicity="1" />
+          <End Type="Model.Individual_Donor" Role="Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="gid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Individual_Donor_States">
+          <End Type="Model.State" Role="State" Multiplicity="1" />
+          <End Type="Model.Individual_Donor" Role="Individual_Donor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="Individual_Donor">
+              <PropertyRef Name="fkstateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Org_details">
+          <End Type="Model.Org_details" Role="Org_details" Multiplicity="1" />
+          <End Type="Model.Message" Role="Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org_details">
+              <PropertyRef Name="pk_orgid" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="fk_orgid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Org_details_States">
+          <End Type="Model.State" Role="State" Multiplicity="1" />
+          <End Type="Model.Org_details" Role="Org_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="stateid" />
+            </Principal>
+            <Dependent Role="Org_details">
+              <PropertyRef Name="fk_stateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Org_roles_Org_details">
+          <End Type="Model.Org_details" Role="Org_details" Multiplicity="1" />
+          <End Type="Model.Org_roles" Role="Org_roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org_details">
+              <PropertyRef Name="pk_orgid" />
+            </Principal>
+            <Dependent Role="Org_roles">
+              <PropertyRef Name="fk_orgid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Blood_Gp">
+            <EntityTypeMapping TypeName="Model.Blood_Gp">
+              <MappingFragment StoreEntitySet="Blood_Gp">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="Model.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="gender1" ColumnName="gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="Model.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Org_roles">
+            <EntityTypeMapping TypeName="Model.Org_roles">
+              <MappingFragment StoreEntitySet="Org_roles">
+                <ScalarProperty Name="fk_orgid" ColumnName="fk_orgid" />
+                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+                <ScalarProperty Name="tid" ColumnName="tid" />
+                <ScalarProperty Name="pk_roleId" ColumnName="pk_roleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleTypes">
+            <EntityTypeMapping TypeName="Model.RoleType">
+              <MappingFragment StoreEntitySet="RoleType">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="Model.State">
+              <MappingFragment StoreEntitySet="States">
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="stateid" ColumnName="stateid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BloodBanks">
+            <EntityTypeMapping TypeName="Model.BloodBank">
+              <MappingFragment StoreEntitySet="BloodBank">
+                <ScalarProperty Name="fk_stateid" ColumnName="fk_stateid" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="Model.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="created_time" ColumnName="created_time" />
+                <ScalarProperty Name="fk_orgid" ColumnName="fk_orgid" />
+                <ScalarProperty Name="fk_stateid" ColumnName="fk_stateid" />
+                <ScalarProperty Name="message1" ColumnName="message" />
+                <ScalarProperty Name="bid" ColumnName="bid" />
+                <ScalarProperty Name="Mobile_No" ColumnName="Mobile No" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donors">
+            <EntityTypeMapping TypeName="Model.Donor">
+              <MappingFragment StoreEntitySet="Donor">
+                <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+                <ScalarProperty Name="cid" ColumnName="cid" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Aadhar_Card_No" ColumnName="Aadhar Card No" />
+                <ScalarProperty Name="fk_stateid" ColumnName="fk_stateid" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="gid" ColumnName="gid" />
+                <ScalarProperty Name="bid" ColumnName="bid" />
+                <ScalarProperty Name="DonorEmail" ColumnName="DonorEmail" />
+                <ScalarProperty Name="DonorName" ColumnName="DonorName" />
+                <ScalarProperty Name="fk_donor_orgid" ColumnName="fk_donor_orgid" />
+                <ScalarProperty Name="pk_id" ColumnName="pk_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="Model.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="Model.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Individual_Donor">
+            <EntityTypeMapping TypeName="Model.Individual_Donor">
+              <MappingFragment StoreEntitySet="Individual_Donor">
+                <ScalarProperty Name="fk_roleid" ColumnName="fk_roleid" />
+                <ScalarProperty Name="fk_id" ColumnName="fk_id" />
+                <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="AadharCardNo" ColumnName="AadharCardNo" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="fkstateid" ColumnName="fkstateid" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="gid" ColumnName="gid" />
+                <ScalarProperty Name="bid" ColumnName="bid" />
+                <ScalarProperty Name="DonorName" ColumnName="DonorName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Org_details">
+            <EntityTypeMapping TypeName="Model.Org_details">
+              <MappingFragment StoreEntitySet="Org_details">
+                <ScalarProperty Name="fk_roleid" ColumnName="fk_roleid" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="org_image" ColumnName="org_image" />
+                <ScalarProperty Name="fk_stateid" ColumnName="fk_stateid" />
+                <ScalarProperty Name="fk_id" ColumnName="fk_id" />
+                <ScalarProperty Name="org_descp" ColumnName="org_descp" />
+                <ScalarProperty Name="org_name" ColumnName="org_name" />
+                <ScalarProperty Name="pk_orgid" ColumnName="pk_orgid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

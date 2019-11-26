@@ -1,0 +1,153 @@
+﻿@model IEnumerable<BloodDonationManagementSystem.Org_details>
+
+@{
+   
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <section class="wrapper style1">
+        <div class="inner">
+            <div class="flex flex-2">
+                <div class="col col2">
+                    <h3>Benifits of Our System</h3>
+                    <p>You can work here as an Organization that can keep all records here and create as many as donors you can .You can also work as Individual Donor by registering here and Our system will show all nearby Blood Banks you.</p>
+                    <p>One can easily get blood from this system if blood is available,He/She just need to see the stock available of current blood group and then blood stocks in different Hospitals will be shown to him.You can easily contact them just by clicking a button. </p>
+                    <a href="#" class="button">Update Profile</a>
+                </div>
+                <div class="col col1 first">
+                    <div class="image round fit">
+
+                        <img src="~/images/pic02.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="main">
+        <section class="wrapper style2">
+            <div class="inner">
+                <!-- 2 Columns -->
+                <div class="flex flex-2">
+                    <div class="" style="width:100%;">
+                        <table class="table table-striped table-bordered">
+                            <tr>
+                                <th>
+                                    Organization Name
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    State
+                                </th>
+                                <th>
+                                    Image
+                                </th>
+
+                                <th>
+                                    Organization Email
+                                </th>
+                                <th>
+
+                                    UPDATE PROFILE
+
+                                </th>
+                                <th>
+                                    ORG ROLES
+
+                                </th>
+                                <th>
+                                    DONORS
+                                </th>
+                                <th>
+                                    ALL REQUESTS
+                                </th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.org_name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.org_descp)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.State.StateName)
+                                    </td>
+                                    <td>
+                                        <image src="@Url.Content("../"+item.org_image)" width="100px" height="100px"></image>
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                                    </td>
+                                    <td>
+                                        @if (Model.Count() > 0)
+                                        {
+                                            <a href="~/Org_Details/Edit/@item.pk_orgid" class="button alt small">EDIT</a>
+
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (Model.Count() > 0)
+                                        {
+                                            <a href="~/OrgRoles" class="button alt small">VIEW</a>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (Model.Count() > 0)
+                                        {
+                                            <a href="~/Donors/Create/@item.fk_stateid" class="button alt small">CREATE</a>
+                                        }
+                                    </td>
+                                    <td><a href="~/Org_Details/MessageIndex" class="button">ALL REQUESTS</a></td>
+                                </tr>
+
+                            }
+
+                        </table>
+                    </div>
+                    <h5>
+                        @if (Model.Count() > 0)
+                        {
+                            <a href="~/Donors/Index" class="button alt small">  DONOR's LIST</a>
+                        }
+                    </h5>
+                </div>
+            </div>
+        </section>
+        <section class="wrapper style1">
+            <div class="inner">
+                <header class="align-center">
+                    <h2>Donate blood, Donate smile!</h2>
+                    <p>Never lose the opportunity of blood donation as it always chose someone special.</p>
+                </header>
+                <div class="flex flex-3">
+                    <div class="col align-center">
+                        <div class="image round fit" style="width:200px;height:200px;margin:0 auto 30px;">
+                            <img src="~/images/pic03.jpg" alt="" style="width:100%;height:100%;" />
+                        </div>
+                        <p>Spare only 15 minutes and Save one life. </p>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                    <div class="col align-center">
+                        <div class="image round fit" style="width:200px;height:200px;margin:0 auto 30px;">
+                            <img src="~/images/pic05.jpg" alt="" style="width:100%;height:100%;" />
+                        </div>
+                        <p>Bring a life back to power. Make blood donation your responsibility. </p>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                    <div class="col align-center">
+                        <div class="image round fit" style="width:200px;height:200px;margin:0 auto 30px;">
+                            <img src="~/images/pic04.jpg" alt="" style="width:100%;height:100%;" />
+                        </div>
+                        <p>You are Rock Star of someone’s life, donate blood! </p>
+                        <a href="#" class="button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>

@@ -1,0 +1,90 @@
+﻿@model BloodDonationManagementSystem.Event
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Delete";
+}
+@*<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css" id="theme-styles">
+
+<script>
+Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+    if (result.value) {
+        $.get("/Events/Delete", { id: $("#x") }, function (data) {
+            alert(data);
+        });
+
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+
+        )
+      }
+        })
+    </script>*@
+
+
+
+<h3>Delete</h3>
+<h4>Are you sure you want to delete this?</h4>
+<div>
+    <h4>Event</h4>
+    <hr />
+    <input type="hidden" value="model=>model.Id" id="x" />
+    @*@Html.HiddenFor(model => model.Id)*@
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Place)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            
+            <image src="@Url.Content("../"+@Model.Image)" width="100px" height="100px"></image>
+
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

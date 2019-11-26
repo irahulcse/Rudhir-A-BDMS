@@ -1,31 +1,118 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<BloodDonationManagementSystem.Event>
+@{
+   
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- Banner -->
+<section id="banner">
+    <div class="inner">
+        <header>
+            <h1>This is Life Saver</h1>
+            <p>We are a online Source helping people a lot !<br />Good to see you here.</p>
+        </header>
+        <a href="#main" class="button big scrolly">All Blood Camps</a>
+    </div>
+</section>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div id="main">   
+    <section class="wrapper style1">
+        <div class="inner">
+         
+            <div class="flex flex-2">
+                <div class="" style="width:100%;">
+
+                    <table class="table table-striped table-bordered">
+                        <tr>
+                            <th>
+                                EVENT NAME
+                            </th>
+                            <th>
+                                EVENT PLACE
+                            </th>
+                            <th>
+                                EVENT TIMINGS
+                            </th>
+                            <th>
+                                SEE SNAPSHOT
+                            </th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EventName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Place)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td>
+                                    <image src="@Url.Content("../"+ item.Image)" style="max-width:150px; width:100%;"></image>
+                                </td>
+                           </tr>
+                        }
+                    </table>
+               </div>
+      
+          </div>
+        </div>
+    </section>
+     
+    <section class="wrapper style2">
+        <div class="inner">
+            <div class="flex flex-2">
+                <div class="col col2">
+                    <h3>Benifits of Our System</h3>
+                    <p>You can work here as an Organization that can keep all records here and create as many as donors you can .You can also work as Individual Donor by registering here and Our system will show all nearby Blood Banks you.</p>
+                    <p>One can easily get blood from this system if blood is available,He/She just need to see the stock available of current blood group and then blood stocks in different Hospitals will be shown to him.You can easily contact them just by clicking a button. </p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+                <div class="col col1 first">
+                    <div class="image round fit">
+                       
+                        <img src="~/images/pic02.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section -->
+    <section class="wrapper style1">
+        <div class="inner">
+            <header class="align-center">
+                <h2>Donate blood, Donate smile!</h2>
+                <p>Never lose the opportunity of blood donation as it always chose someone special.</p>
+            </header>
+            <div class="flex flex-3">
+                <div class="col align-center">
+                    <div class="image round fit" style="width:200px;height:200px;margin:0 auto 30px;">
+                        <img src="~/images/pic03.jpg" alt="" style="width:100%;height:100%;" />
+                    </div>
+                    <p>Spare only 15 minutes and Save one life. </p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+                <div class="col align-center">
+                    <div class="image round fit" style="width:200px;height:200px;margin:0 auto 30px;">
+                        <img src="~/images/pic05.jpg" alt="" style="width:100%;height:100%;" />
+                    </div>
+                    <p>Bring a life back to power. Make blood donation your responsibility. </p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+                <div class="col align-center">
+                    <div class="image round fit" style="width:200px;height:200px;margin:0 auto 30px;">
+                        <img src="~/images/pic04.jpg" alt="" style="width:100%;height:100%;" />
+                    </div>
+                    <p>You are Rock Star of someone’s life, donate blood! </p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+

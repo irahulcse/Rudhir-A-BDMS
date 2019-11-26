@@ -1,0 +1,174 @@
+﻿
+@model IEnumerable<BloodDonationManagementSystem.Donor>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="main">
+    <section class="wrapper style1">
+        <div class="inner">
+            <div class="flex flex-2">
+                <div class="" style="width:100%;">
+
+                    <h5>
+                        <a href='@Url.Action("Index", "Org_Details")' class="button"> ORGNZ HOME </a>
+                    </h5>
+                    <br />
+                    @using (Html.BeginForm("Index", "Donors", FormMethod.Get))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="6u 12u$(xsmall)" style="width:45%;">
+
+                            <h4>Choose Blood Group:-</h4>
+                            @Html.DropDownList("gp", new SelectList(ViewBag.gp), htmlAttributes: new { @class = "form-control" })
+                            <br />
+                            <input type="submit" class="fit" value="SEARCH" />
+
+                        </div>
+                    }
+                    <br /><br />
+                    <table class="table table-striped table-bordered">
+                        <tr>
+
+                            <th>
+                                DonorEmail
+                            </th>
+                            <th>
+                                DonorName
+                            </th>
+                            <th>
+                                Blood Group
+                            </th>
+                            <th>
+                                Gender
+                            </th>
+                            <th>
+                                DOB
+                            </th>
+                            <th>
+                                ContactNo
+                            </th>
+                            <th>
+                                State
+                            </th>
+                            <th>
+                                Aadhar Card No
+                            </th>
+
+                            <th>
+                                Created By
+                            </th>
+                            <th>
+                                Organization Name
+                            </th>
+                            <th>Update</th>
+                            @*<th>
+                <input type="checkbox" id="select_all" value="select_all" />        Select All      </th>*@
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr class="data">
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DonorEmail)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DonorName)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Blood_Gp.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gender.gender1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DOB)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ContactNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.State.StateName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Aadhar_Card_No)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Org_roles.PersonName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Org_details.org_name)
+                                </td>
+                                <td>
+                                    <a href="~/Donors/Edit/@item.pk_id" class="button">EDIT</a>
+                                </td>
+                                @*<td>   <input type="checkbox" class="chk" name="chk" /> </td>*@
+                            </tr>
+                        }
+
+                    </table>
+                    <br />
+                    <input type="submit" value="Send Email To All" class="btn btn-default" id="btn" /><br>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+  <div>  
+</div>
+    </div>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $("#btn").click(function () {
+            var arr = [];
+            $("tr.data").each(function () {
+                arr.push($(this).find("td:first").text()); //put elements into array
+            });
+            swal({
+                title: "Wait!",
+                text: "We are processing your request",
+               
+            });
+            $.ajax({
+
+                type: "POST",
+                traditional: true,
+                url: "/Donors/Contact",
+                data: { EmailList: arr },
+                dataType: "JSON",
+                success: function (result) {
+                    if (result > 0) {
+
+                        swal({
+                            title: "Good job!",
+                            text: "We have Successfully sent Email to " + result + " Donors",
+                            icon: "success",
+                            button: "Ok!",
+                        });
+                    }
+
+                },
+                error: function () { }
+            });
+        });
+    </script>
+
+    @*<script>
+
+        $('#select_all').click(function () {
+            $('.chk').prop('checked', $(this).prop('checked'))
+           
+        });
+
+    </script>*@
+    

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<BloodDonationManagementSystem.Org_roles>
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="wrapper style1">
+    <div class="inner">
+
+        <div class="flex flex-2">
+            <div class="col col1">
+                <div class="image round fit">
+                    <img src="~/images/pic01.jpg" alt="" />
+                </div>
+            </div>
+            <div class="col col2">
+                <h2>You are supporting society a lot!</h2><br />
+                <h4>Add as much as Donors in Your Organization</h4><br />
+                <h4>Make Sure you must Add all Roles provided above! </h4>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div id="main">
+    <section class="wrapper style2">
+        <div class="inner">
+
+            <div class="flex flex-2">
+                <div class="" style="width:100%;">
+                    <p>
+                       <a href="~/OrgRoles/Create" class="button">Add Roles</a>
+                      
+                    </p>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Person Name
+                            </th>
+                            <th>
+                                Organization Name
+                            </th>
+                            <th>
+                                Role Type
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PersonName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Org_details.org_name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RoleType.type)
+                                </td>
+                                <td>
+                                    <a href="~/OrgRoles/Edit/@item.pk_roleId" class="button alt small">Edit</a>
+                                    
+                                    <a href="~/OrgRoles/Delete/@item.pk_roleId" class="button alt small">Delete</a>
+                                   
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                    <br />
+                    <br />
+                    <p>
+                        <a href="~/Org_details/Index" class="button">Organization Home</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

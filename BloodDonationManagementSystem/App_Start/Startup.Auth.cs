@@ -58,11 +58,11 @@ namespace BloodDonationManagementSystem
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "920204045064-d9013g9ks0oj1qf5abepmk2ot4c01bb8.apps.googleusercontent.com",
+                ClientSecret = "ObBxUvKREAYtZk9zFKwfZxHB"
+            });
         }
     }
 }

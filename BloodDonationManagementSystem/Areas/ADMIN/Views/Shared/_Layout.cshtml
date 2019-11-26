@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Rudhir:A BDMS</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("BDMS", "Index", "Events", new { area = "ADMIN" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav left">
+                    <li>@Html.ActionLink("DIFF ORGNZ", "Index", "Admin_view_org")</li>
+                    <li>@Html.ActionLink("ORGNZ ROLES", "Index", "CreateRoles")</li>
+                    <li>@Html.ActionLink("NEW REQUESTS", "MessageIndex", "Admin_view_indv")</li>
+                    <li>@Html.ActionLink("INDIVIDUAL DONORS", "Index", "Admin_view_indv")</li>
+                    <li>@Html.ActionLink("ORGANIZATION DONORS", "Org_donor", "Admin_view_indv")</li>
+                    <li>@Html.ActionLink("STATES", "StateIndex", "states")</li>
+                    <li>@Html.ActionLink("BLOOD BANKS", "Index", "BloodBanks")</li>
+                    <li class="nav navbar-right"><a href="~/Account/Login">LOGOUT</a></li>
+                </ul>
+              
+              
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year -Rudhir:A BDMS</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

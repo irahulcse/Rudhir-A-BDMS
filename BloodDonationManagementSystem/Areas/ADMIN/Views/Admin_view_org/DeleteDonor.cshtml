@@ -1,0 +1,107 @@
+﻿@model BloodDonationManagementSystem.Donor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Delete</h3>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Organization Donor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Org_details.org_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Org_details.org_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DonorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonorEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonorEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State.StateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State.StateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aadhar_Card_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aadhar_Card_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blood_Gp.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blood_Gp.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender.gender1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.gender1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Org_roles.PersonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Org_roles.PersonName)
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+

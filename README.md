@@ -6,7 +6,7 @@ shown the details of all the available Blood Banks available in their state.
 Admin Updates camps that are going to take place and these can be viewed by everyone.Also have a chatbot that can resolve your issues.
 
 #### Website's Home Page:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(406).png)
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(561).png)
 
 
 ### Advanced Features Implemented :

@@ -10,10 +10,16 @@ Admin Updates camps that are going to take place and these can be viewed by ever
 
 
 ### Advanced Features Implemented :
+#### Google Maps Integration: 
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(924).png)
+
+#### ChatBot Implementation: 
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(926).png)
 #### Google SignIn Facility:
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(624).png)
 #### Forgot Password Credentials:
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(420).png)
+
 #### Notification: 
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(421).png)
 #### Token Sent on Email For Password Change: 

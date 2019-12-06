@@ -15,8 +15,8 @@ Admin Updates camps that are going to take place and these can be viewed by ever
 
 #### ChatBot Implementation: 
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(926).png)
-#### Google SignIn Facility:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(624).png)
+#### azure Database Connection:
+![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/azure.png)
 #### Forgot Password Credentials:
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(420).png)
 

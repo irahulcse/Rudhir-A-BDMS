@@ -15,10 +15,12 @@ Admin Updates camps that are going to take place and these can be viewed by ever
 
 #### ChatBot Implementation: 
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(926).png)
-#### Microsoft Azure Database Connection:
-![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/azure.JPG)
+
+
 #### Searching Functionality:
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(565).png)
+#### Microsoft Azure Database Connection:
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/azure.JPG)
 
 #### Google SignIn Facility: 
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(595).png)

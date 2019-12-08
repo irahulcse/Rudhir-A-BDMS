@@ -149,8 +149,8 @@ If you receive a User Account Control notice, choose Yes.
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(423).png)
 #### Admin Creating Pdf Of Question Paper:
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(415).png)
-#### Generated Pdf:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(416).png)
+#### Used Queries:
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(568).png)
 #### Some Help to Teachers:
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(430).png)
 

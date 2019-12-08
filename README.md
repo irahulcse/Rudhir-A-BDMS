@@ -20,8 +20,8 @@ Admin Updates camps that are going to take place and these can be viewed by ever
 #### Forgot Password Credentials:
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(420).png)
 
-#### Notification: 
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(421).png)
+#### Google SignIn Facility: 
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(595).png)
 #### Token Sent on Email For Password Change: 
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(422).png)
 

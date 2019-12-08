@@ -12,28 +12,21 @@ Admin Updates camps that are going to take place and these can be viewed by ever
 ### Advanced Features Implemented :
 #### Google Maps Integration: 
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(924).png)
-
 #### ChatBot Implementation: 
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(926).png)
-
-
 #### Searching Functionality:
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(565).png)
 #### Microsoft Azure Database Connection:
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/azure.JPG)
-
 #### Google SignIn Facility: 
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(595).png)
 #### Token Sent on Email For Password Change: 
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(422).png)
-
-
 + [Development](#development)
 + [Contribute](#contribute)
 + [Setup](#setup)
 + [Features](#features)
 + [Screenshots](#screenshots)
-
 ## Development
 The backend of the system is developed on *[MSSQL SERVER](https://www.microsoft.com/en-au/sql-server/sql-server-downloads)* and it is free and open source. You just need to download this and installed it on your pc and it will be integrated with the Frontend in the Visual Studio 2017.
 The front end is built on *[MVC]*, you can use that in Visual Studio an OpenSource Platform Developed By Microsoft.Bootstrap Files are used too[Bootstrap v2.2.2](http://bootstrapdocs.com/v2.2.2/docs/) using [jQuery](https://blog.jquery.com/2013/02/04/jquery-1-9-1-released/) and [Ajax](https://www.w3schools.com/xml/ajax_intro.asp) and basic HTML/CSS/Javascript are used.On Form Submission Sweet Alert Library of Javascript is used which gives a beautiful popup.
@@ -114,9 +107,9 @@ If you receive a User Account Control notice, choose Yes.
     Next, status screens appear that show the progress of your Visual Studio installation.
 
 ## Features
-+ Admin can create Subjects,Teachers,Departments,Semsters(say CSE,MCA Department)and Admin have the right to create Semsters and their different Subjects.
 + Admin is more of the supreme or you can say a Senior Vice President Person who commands and monitors the progress.
-+ Teacher can access its portal and he can download the format of the Question Paper to be Uploaded.After filling in the Excel Sheet with data he can Upload that File.
++ Admin can update events(say a Blood Camp being Organized)and Admin have the right to Block someone's account if he finds that their records are false or some other issue is there. He can Update data and Mark As Deleted (i.e. flag the data in table from n to y/
+One of the important feature used in the Companies at big level).
 + All those Questions from different teachers from different Departments and from different Subjects are saved in the Database.
 + Admin  can View all that data and now come his work to Create Question Paper for All the Deartments.
 + Admin Choose the Department,Semster,Subject and All the Questions related to those filters will be displayed.He will click on a Button and then Question Paper will be Generated on basis of Randomization Algo.

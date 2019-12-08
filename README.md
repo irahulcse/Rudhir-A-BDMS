@@ -135,7 +135,8 @@ If you receive a User Account Control notice, choose Yes.
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(568).png)
 #### Organization's Profile:
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(594).png)
-
+#### Password Changing Panel:
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(597).png)
 ## Furture Scope:
 * The web application can be upgraded to a very high responsive and well designed application in the future with many addition of different features.
 *	In future the web application can also support of making of circles which would include a list of members as added by the circle leader and they all can upload question sets and then at the time of generation the generated question set will be delivered to the circle leader and not anyone else and thus reducing the chance of question paper leakage. 

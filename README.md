@@ -137,4 +137,6 @@ blood.
 * The web application can be upgraded to a very high responsive and well designed application in the future with many addition of different features.
 * The core benefit of the application development lies in improved quality of interface through timely response. Moreover, windows applications support vital features like uploading pictures.
 *	We can add report submission forms to Individual Donors.So that it must be verified that one who is willing to give blood is free from diseases.
-
+* We can check location from GPS and it can easily tell other Individual Donor to donate blood at this place where blood is required.
+* The system could also be enhanced by adding the voice response system through the voice control system, which would help the user to
+quickly react instead of typing.

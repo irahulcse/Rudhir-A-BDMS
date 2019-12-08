@@ -130,11 +130,7 @@ If you receive a User Account Control notice, choose Yes.
 #### Admin Panel(After Login):
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(408).png)
 #### Control Flow:
-![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Capture1.jpg)
-#### Questions Uploaded By Teacher:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(419).png)
-#### Admin Viewing Uploaded Questions:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(413).png)
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Capture1.JPG)
 #### Excel Downloaded File:
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(431).png)
 #### Password Changing Panel:

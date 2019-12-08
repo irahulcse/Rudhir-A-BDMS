@@ -126,7 +126,7 @@ If you receive a User Account Control notice, choose Yes.
 ## Screenshots
 
 #### Admin,HOD,Coordinator and Teacher Login Portal :
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(418).png)
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(562).png)
 #### Admin Panel(After Login):
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(408).png)
 #### Contact Us:

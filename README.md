@@ -108,7 +108,7 @@ If you receive a User Account Control notice, choose Yes.
 <br/>Step 4 - Choose workloads
    After the installer is installed, you can use it to customize your installation by selecting the feature sets—or workloads—that you      want. Here's how.<br/>
     <br/>1. Find the workload you want in the Installing Visual Studio screen.<br/>
- <br/>![](https://docs.microsoft.com/en-us/visualstudio/install/media/vs-installer-installing-workloads.png?view=vs-2019)<br/>
+ <br/>![](https://docs.microsoft.com/en-us/visualstudio/install/media/vs-2019/vs-installer-workloads.png?view=vs-2019)<br/>
  <br/>For example, choose the ".NET desktop development" workload. It comes with the default core editor, which includes basic code        editing support for over 20 languages, the ability to open and edit code from any folder without requiring a project, and integrated    source code control.<br/>
        <br/> 2. After you choose the workload(s) you want, choose Install.
     Next, status screens appear that show the progress of your Visual Studio installation.

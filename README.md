@@ -17,8 +17,8 @@ Admin Updates camps that are going to take place and these can be viewed by ever
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(926).png)
 #### Microsoft Azure Database Connection:
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/azure.JPG)
-#### Forgot Password Credentials:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(420).png)
+#### Searching Functionality:
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(565).png)
 
 #### Google SignIn Facility: 
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(595).png)

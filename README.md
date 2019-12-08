@@ -131,16 +131,8 @@ If you receive a User Account Control notice, choose Yes.
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(572).png)
 #### Control Flow:
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Capture1.JPG)
-#### Excel Downloaded File:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(431).png)
-#### Password Changing Panel:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(423).png)
-#### Admin Creating Pdf Of Question Paper:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(415).png)
 #### Used Queries:
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(568).png)
-#### Some Help to Teachers:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(430).png)
 
 ## Furture Scope:
 * The web application can be upgraded to a very high responsive and well designed application in the future with many addition of different features.

@@ -129,8 +129,8 @@ If you receive a User Account Control notice, choose Yes.
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(562).png)
 #### Admin Panel(After Login):
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(408).png)
-#### Contact Us:
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(407).png)
+#### Control Flow:
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Capture1.jpg)
 #### Questions Uploaded By Teacher:
 ![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(419).png)
 #### Admin Viewing Uploaded Questions:

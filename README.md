@@ -133,6 +133,8 @@ If you receive a User Account Control notice, choose Yes.
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Capture1.JPG)
 #### Used Queries:
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(568).png)
+#### Organization's Profile:
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(594).png)
 
 ## Furture Scope:
 * The web application can be upgraded to a very high responsive and well designed application in the future with many addition of different features.

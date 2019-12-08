@@ -128,7 +128,7 @@ If you receive a User Account Control notice, choose Yes.
 #### Login Portal :
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(562).png)
 #### Admin Panel(After Login):
-![](https://github.com/DhruvKinger/Curosome/blob/master/Forgithub/Screenshot%20(408).png)
+![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Screenshot%20(572).png)
 #### Control Flow:
 ![](https://github.com/DhruvKinger/Rudhir-A-BDMS/blob/master/Forgithub/Capture1.JPG)
 #### Excel Downloaded File:

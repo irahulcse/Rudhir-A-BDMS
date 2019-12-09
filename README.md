@@ -44,7 +44,7 @@ Entity Framework 6.0 is used with the Database First approach is followed In thi
 ### Default Login Credentials For Teacher
 | Username | Password |
 | ------------- | ------------- |
-| dtilak1999@gmail.com | dTilak99|
+|	sroy.sayanto@gmail.com  | Tilak99+|
 
 ### Default Login Credentials For Coordinator
 | Username | Password |

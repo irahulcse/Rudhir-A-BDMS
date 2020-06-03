@@ -46,7 +46,7 @@ Entity Framework 6.0 is used with the Database First approach is followed In thi
 | ------------- | ------------- |
 |	sroy.sayanto@gmail.com  | Tilak99+|
 
-### Default Login Credentials For Individual Donor
+### Default Login Credentials For Organization
 | Username | Password |
 | ------------- | ------------- |
 | cse1785@gmail.com | Cse1785@ |

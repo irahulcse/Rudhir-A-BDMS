@@ -41,12 +41,12 @@ Entity Framework 6.0 is used with the Database First approach is followed In thi
 | ------------- | ------------- |
 | dhruvkinger813@gmail.com | India99@ |
 
-### Default Login Credentials For Teacher
+### Default Login Credentials For Organization
 | Username | Password |
 | ------------- | ------------- |
 |	sroy.sayanto@gmail.com  | Tilak99+|
 
-### Default Login Credentials For Coordinator
+### Default Login Credentials For Individual Donor
 | Username | Password |
 | ------------- | ------------- |
 | cse1785@gmail.com | Cse1785@ |

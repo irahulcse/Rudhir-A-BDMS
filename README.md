@@ -108,15 +108,13 @@ If you receive a User Account Control notice, choose Yes.
 
 ## Features
 + Admin is more of the supreme or you can say a Senior Vice President Person who commands and monitors the progress.
-+ Admin can update events(say a Blood Camp being Organized)and Admin have the right to Block someone's account if he finds that their records are false or some other issue is there. He can Update data and Mark As Deleted (i.e. flag the data in table from n to y,
-One of the important feature used in the Companies at big level).
-+ Organization can access only its portal but can do a lot of stuff.It can add Donors as much as they wish.
-+ If a person contacts Organization for blood, they just need to click a button and email will be sent to all the Donors of the Organization whose blood group matches with the required one. 
-+ Individual Donors can register and after registration they are shown with the List of Blood Banks in their state where they can donate
-blood.
-+ Users who need Blood are not required to register they can directly check blood stocks according to their requirement. Portal will be shown with Organizations having Blood Stocks plus the Individual Donors who can provide Blood too. From which they can contact according to their wish.
-+ Databse Connectivity is through the Azure SQL Server.
-+ Chatbot Functionality is Implemented in the systemthrough the third party libraries like Kommunicate.IO.
++ Admin can update events and has the right to Block someone's account if he finds some issues in their accounts. 
++ Organization can access their portal and can do a lot of tasks. They can add Donors registered through their events.
++ If a person contacts organization for blood, they just need to click a button and email will be sent to the organization.
++ Individual Donors can register and they are shown with the List of Blood Banks in their state where they can donate blood.
++ Users who need Blood are not required to register they can directly check blood stocks according to their requirement. 
++ Database Connectivity is through the Azure SQL Server.
++ Chatbot Functionality is Implemented in the system through the third party libraries like Kommunicate.IO.
 
 
 ## Screenshots
